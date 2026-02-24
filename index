@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #000; color: #fff; font-family: ui-sans-serif, system-ui, sans-serif; }
+        /* This ensures the Substack widget matches your dark theme */
+        #custom-substack-embed { width: 100%; max-width: 480px; }
     </style>
 </head>
 <body class="p-8 md:p-20">
@@ -16,8 +18,8 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
         <nav class="flex flex-col space-y-4 text-3xl font-bold uppercase italic">
-            <a href="https://youtube.com/@BySophiaLuz" class="hover:line-through">YouTube</a>
-            <a href="https://sophialuz.substack.com" class="hover:line-through">Substack</a>
+            <a href="https://youtube.com/@BySophiaLuz" class="hover:line-through w-fit">YouTube</a>
+            <a href="https://sophialuz.substack.com" class="hover:line-through w-fit">Substack</a>
         </nav>
 
         <div class="border-t border-white/20 pt-8">
@@ -28,5 +30,21 @@
     <footer class="mt-24 text-[10px] uppercase tracking-[0.2em] opacity-30">
         &copy; 2026 Sophia Luz
     </footer>
+
+    <script>
+        window.CustomSubstackWidget = {
+            substackUrl: "sophialuz.substack.com",
+            placeholder: "custom-substack-embed",
+            buttonText: "Subscribe",
+            theme: "custom",
+            colors: {
+                primary: "#FFFFFF",
+                input: "#000000",
+                email: "#FFFFFF",
+                text: "#000000",
+            }
+        };
+    </script>
+    <script src="https://substackapi.com/widget.js" async></script>
 </body>
 </html>
