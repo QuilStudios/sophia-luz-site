@@ -154,67 +154,6 @@
             transition: transform 0.4s ease;
         }
 
-        /* ── Subscribe ── */
-        .sub-section {
-            padding: 56px 40px;
-            margin: 0 -60px;
-            background: #F5EBDE;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) forwards;
-            animation-delay: 0.75s;
-        }
-
-        .sub-eyebrow {
-            font-size: 8px;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--grey);
-            margin-bottom: 28px;
-        }
-
-        .sub-form {
-            display: flex;
-            max-width: 360px;
-            border: 1px solid var(--black);
-        }
-
-        .sub-form input {
-            flex: 1;
-            padding: 13px 16px;
-            background: transparent;
-            border: none;
-            outline: none;
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 10px;
-            letter-spacing: 0.15em;
-            color: var(--black);
-        }
-
-        .sub-form input::placeholder {
-            color: var(--grey);
-            font-size: 9px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-        }
-
-        .sub-form button {
-            padding: 13px 20px;
-            background: var(--black);
-            color: var(--white);
-            border: none;
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 8px;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .sub-form button:hover {
-            background: #222;
-        }
-
         /* ── Footer ── */
         footer {
             margin-top: 80px;
@@ -290,22 +229,14 @@
                     <span class="link-arrow">→</span>
                 </span>
             </a>
-            <a href="https://sophialuz.substack.com" class="link-row" target="_blank" rel="noopener">
+            <a href="mailto:contactsophiamedia@gmail.com" class="link-row">
                 <span class="link-num">02</span>
-                <span class="link-title">Substack</span>
+                <span class="link-title">Contact</span>
                 <span class="link-meta">
-                    <span class="link-desc">Essays<br>Writing</span>
+                    <span class="link-desc">Email<br>Inquiries</span>
                     <span class="link-arrow">→</span>
                 </span>
             </a>
-        </div>
-
-        <div class="sub-section">
-            <p class="sub-eyebrow">Subscribe</p>
-            <div class="sub-form">
-                <input type="email" id="em" placeholder="Email address">
-                <button onclick="handleSub()">Submit</button>
-            </div>
         </div>
 
         <footer>
@@ -314,20 +245,6 @@
         </footer>
 
     </main>
-
-    <script>
-        function handleSub() {
-            const v = document.getElementById('em').value;
-            if (v && v.includes('@')) {
-                window.open('https://sophialuz.substack.com/subscribe?email=' + encodeURIComponent(v), '_blank');
-            } else {
-                const i = document.getElementById('em');
-                i.style.outline = '1px solid #0A0A0A';
-                i.focus();
-            }
-        }
-        document.getElementById('em').addEventListener('keydown', e => { if(e.key==='Enter') handleSub(); });
-    </script>
 
 </body>
 </html>
