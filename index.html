@@ -4,247 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophia Luz</title>
-    <meta name="description" content="Sophia Luz">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --white: #FFFFFF; --black: #0A0A0A; --grey: #888; --line: #E0E0E0; --accent: #F02720; }
+        body { background: var(--white); color: var(--black); font-family: 'Tenor Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+        
+        .masthead { border-bottom: 1px solid var(--line); padding: 18px 60px; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--grey); }
+        main { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
 
-        :root {
-            --white: #FFFFFF;
-            --off: #F5EBDE;
-            --black: #0A0A0A;
-            --grey: #888;
-            --line: #E0E0E0;
-        }
+        .name-section { padding: 96px 0 72px; border-bottom: 1px solid var(--line); }
+        .name-section h1 { font-family: 'Cormorant', serif; font-weight: 300; font-size: clamp(72px, 11vw, 144px); line-height: 0.9; text-transform: uppercase; }
+        .name-section h1 em { font-style: italic; display: block; color: var(--accent); }
 
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            background: var(--white);
-            color: var(--black);
-            font-family: 'Tenor Sans', sans-serif;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── Masthead bar ── */
-        .masthead {
-            border-bottom: 1px solid var(--line);
-            padding: 18px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            animation-delay: 0.1s;
-        }
-
-        .masthead-left {
-            font-size: 9px;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--grey);
-        }
-
-        .masthead-right {
-            font-size: 9px;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--grey);
-        }
-
-        /* ── Main ── */
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-
-        /* ── Name ── */
-        .name-section {
-            padding: 96px 0 72px;
-            border-bottom: 1px solid var(--line);
-            opacity: 0;
-            animation: fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) forwards;
-            animation-delay: 0.2s;
-        }
-
-        .name-section h1 {
-            font-family: 'Cormorant', serif;
-            font-weight: 300;
-            font-style: normal;
-            font-size: clamp(72px, 11vw, 144px);
-            line-height: 0.9;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--black);
-        }
-
-        .name-section h1 em {
-            font-style: italic;
-            font-weight: 300;
-            display: block;
-            letter-spacing: 0.08em;
-            color: #F02720;
-        }
+        /* ── Works Gallery ── */
+        .works-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 0; border-bottom: 1px solid var(--line); }
+        .work-item { display: flex; flex-direction: column; gap: 20px; text-decoration: none; color: inherit; }
+        .work-item img { width: 100%; height: auto; filter: grayscale(10%); transition: filter 0.5s ease; border: 1px solid var(--line); }
+        .work-item:hover img { filter: grayscale(0%); }
+        .work-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); }
+        .work-title { font-family: 'Cormorant', serif; font-size: 24px; font-style: italic; }
 
         /* ── Links ── */
-        .links-section {
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) forwards;
-            animation-delay: 0.5s;
-        }
-
-        .link-row {
-            display: grid;
-            grid-template-columns: 40px 1fr auto;
-            align-items: center;
-            gap: 32px;
-            padding: 28px 0;
-            border-bottom: 1px solid var(--line);
-            text-decoration: none;
-            color: var(--black);
-            transition: all 0.4s ease;
-        }
-
+        .links-section { padding-top: 20px; }
+        .link-row { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--black); transition: all 0.4s ease; }
+        .link-row:hover { background-color: #fafafa; }
         .link-row:hover .link-title { letter-spacing: 0.25em; }
-        .link-row:hover .link-num { color: var(--black); }
         .link-row:hover .link-arrow { transform: translateX(8px); }
 
-        .link-num {
-            font-size: 9px;
-            letter-spacing: 0.2em;
-            color: var(--grey);
-            transition: color 0.4s ease;
-        }
+        .link-num { font-size: 9px; letter-spacing: 0.2em; color: var(--grey); }
+        .link-title { font-family: 'Cormorant', serif; font-size: clamp(26px, 3.5vw, 42px); text-transform: uppercase; letter-spacing: 0.18em; transition: letter-spacing 0.4s ease; line-height: 1; }
+        .link-meta { display: flex; align-items: center; gap: 24px; }
+        .link-desc { font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); text-align: right; }
+        .link-arrow { font-size: 14px; color: var(--grey); transition: transform 0.4s ease; }
 
-        .link-title {
-            font-family: 'Cormorant', serif;
-            font-weight: 300;
-            font-size: clamp(26px, 3.5vw, 42px);
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            transition: letter-spacing 0.4s ease;
-            line-height: 1;
-        }
-
-        .link-meta {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .link-desc {
-            font-size: 8px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--grey);
-            text-align: right;
-            line-height: 2;
-        }
-
-        .link-arrow {
-            font-size: 14px;
-            letter-spacing: 0.1em;
-            color: var(--grey);
-            transition: transform 0.4s ease;
-        }
-
-        /* ── Footer ── */
-        footer {
-            margin-top: 80px;
-            padding: 20px 0 60px;
-            border-top: 1px solid var(--line);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            animation-delay: 1s;
-        }
-
-        .footer-copy {
-            font-size: 8px;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--grey);
-        }
-
-        .footer-sig {
-            font-family: 'Cormorant', serif;
-            font-style: italic;
-            font-weight: 300;
-            font-size: 28px;
-            color: var(--grey);
-            letter-spacing: 0.05em;
-        }
-
-        /* ── Animations ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-
-        /* ── Mobile ── */
-        @media (max-width: 600px) {
-            .masthead { padding: 16px 24px; }
-            main { padding: 0 24px; }
-            .name-section { padding: 60px 0 48px; }
-            .link-row { grid-template-columns: 32px 1fr auto; gap: 16px; }
-            .link-desc { display: none; }
-            footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+        footer { margin-top: 80px; padding: 20px 0 60px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 8px; letter-spacing: 0.35em; color: var(--grey); }
+        
+        @media (max-width: 768px) {
+            .works-gallery { grid-template-columns: 1fr; }
+            .masthead, main { padding: 0 24px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="masthead">
-        <span class="masthead-left">Sophia Luz</span>
-        <span class="masthead-right">Est. 2025</span>
-    </div>
-
+    <div class="masthead"><span>Sophia Luz</span><span>Est. 2025</span></div>
     <main>
+        <div class="name-section"><h1>Sophia<em>Luz</em></h1></div>
 
-        <div class="name-section">
-            <h1>
-                Sophia
-                <em>Luz</em>
-            </h1>
-        </div>
+        <section class="works-gallery">
+            <div class="work-item">
+                <span class="work-label">The Work</span>
+                <img src="divine-spark.png" alt="Divine Spark Painting">
+                <span class="work-title">Divine Spark, 2026</span>
+            </div>
+            <a href="INSERT_GOOGLE_EBOOK_LINK" class="work-item">
+                <span class="work-label">The Foundation</span>
+                <img src="elixir-mockup.png" alt="The Elixir Principle Book & Audio Bundle">
+                <span class="work-title">The Elixir Principle</span>
+            </a>
+        </section>
 
         <div class="links-section">
+            <a href="https://play.google.com/store/books/details?id=yImfEQAAQBAJ" class="link-row" target="_blank" rel="noopener">
+                <span class="link-num">01</span><span class="link-title">The Ebook</span>
+                <span class="link-meta"><span class="link-desc">Digital Wisdom — $37</span><span class="link-arrow">→</span></span>
+            </a>
+            <a href="https://play.google.com/store/audiobooks/details?id=AQAAAEDqT0MPuM" class="link-row" target="_blank" rel="noopener">
+                <span class="link-num">02</span><span class="link-title">The Audiobook</span>
+                <span class="link-meta"><span class="link-desc">Narrated by Author — $37</span><span class="link-arrow">→</span></span>
+            </a>
             <a href="https://youtube.com/@BySophiaLuz" class="link-row" target="_blank" rel="noopener">
-                <span class="link-num">01</span>
-                <span class="link-title">YouTube</span>
-                <span class="link-meta">
-                    <span class="link-desc">Long form<br>Video</span>
-                    <span class="link-arrow">→</span>
-                </span>
+                <span class="link-num">03</span><span class="link-title">YouTube</span>
+                <span class="link-meta"><span class="link-desc">Visual Essays</span><span class="link-arrow">→</span></span>
             </a>
             <a href="mailto:contactsophiamedia@gmail.com" class="link-row">
-                <span class="link-num">02</span>
-                <span class="link-title">Contact</span>
-                <span class="link-meta">
-                    <span class="link-desc">Email<br>Inquiries</span>
-                    <span class="link-arrow">→</span>
-                </span>
+                <span class="link-num">04</span><span class="link-title">Contact</span>
+                <span class="link-meta"><span class="link-desc">Art Inquiries</span><span class="link-arrow">→</span></span>
             </a>
         </div>
 
-        <footer>
-            <span class="footer-copy">&copy; 2026 Sophia Luz. All rights reserved.</span>
-            <span class="footer-sig">SL</span>
-        </footer>
-
+        <footer><span>&copy; 2026 Sophia Luz</span><span style="font-family:'Cormorant'; font-size:24px; font-style:italic;">SL</span></footer>
     </main>
-
 </body>
 </html>
