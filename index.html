@@ -13,38 +13,27 @@
         body { background: var(--white); color: var(--black); font-family: 'Tenor Sans', sans-serif; -webkit-font-smoothing: antialiased; }
         
         .masthead { border-bottom: 1px solid var(--line); padding: 18px 60px; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--grey); }
-        main { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+        main { max-width: 1000px; margin: 0 auto; padding: 0 60px; }
 
         .name-section { padding: 96px 0 72px; border-bottom: 1px solid var(--line); }
         .name-section h1 { font-family: 'Cormorant', serif; font-weight: 300; font-size: clamp(72px, 11vw, 144px); line-height: 0.9; text-transform: uppercase; }
         .name-section h1 em { font-style: italic; display: block; color: var(--accent); }
 
-        /* ── Works Gallery ── */
-        .works-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 0; border-bottom: 1px solid var(--line); }
-        .work-item { display: flex; flex-direction: column; gap: 20px; text-decoration: none; color: inherit; }
-        .work-item img { width: 100%; height: auto; filter: grayscale(10%); transition: filter 0.5s ease; border: 1px solid var(--line); }
-        .work-item:hover img { filter: grayscale(0%); }
-        .work-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); }
-        .work-title { font-family: 'Cormorant', serif; font-size: 24px; font-style: italic; }
-
-        /* ── Links ── */
         .links-section { padding-top: 20px; }
-        .link-row { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--black); transition: all 0.4s ease; }
-        .link-row:hover { background-color: #fafafa; }
-        .link-row:hover .link-title { letter-spacing: 0.25em; }
-        .link-row:hover .link-arrow { transform: translateX(8px); }
-
+        .link-row { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--black); transition: all 0.4s ease; }
+        .link-row:hover { background-color: #fafafa; padding-left: 10px; }
+        
         .link-num { font-size: 9px; letter-spacing: 0.2em; color: var(--grey); }
-        .link-title { font-family: 'Cormorant', serif; font-size: clamp(26px, 3.5vw, 42px); text-transform: uppercase; letter-spacing: 0.18em; transition: letter-spacing 0.4s ease; line-height: 1; }
+        .link-title { font-family: 'Cormorant', serif; font-size: clamp(28px, 4vw, 48px); text-transform: uppercase; letter-spacing: 0.2em; line-height: 1; }
         .link-meta { display: flex; align-items: center; gap: 24px; }
         .link-desc { font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); text-align: right; }
-        .link-arrow { font-size: 14px; color: var(--grey); transition: transform 0.4s ease; }
+        .link-arrow { font-size: 14px; color: var(--grey); }
 
-        footer { margin-top: 80px; padding: 20px 0 60px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 8px; letter-spacing: 0.35em; color: var(--grey); }
+        footer { margin-top: 120px; padding: 20px 0 60px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 8px; letter-spacing: 0.35em; color: var(--grey); }
         
-        @media (max-width: 768px) {
-            .works-gallery { grid-template-columns: 1fr; }
+        @media (max-width: 600px) {
             .masthead, main { padding: 0 24px; }
+            .link-desc { display: none; }
         }
     </style>
 </head>
@@ -53,23 +42,10 @@
     <main>
         <div class="name-section"><h1>Sophia<em>Luz</em></h1></div>
 
-        <section class="works-gallery">
-            <div class="work-item">
-                <span class="work-label">The Work</span>
-                <img src="divine-spark.png" alt="Divine Spark Painting">
-                <span class="work-title">Divine Spark, 2026</span>
-            </div>
-            <a href="INSERT_GOOGLE_EBOOK_LINK" class="work-item">
-                <span class="work-label">The Foundation</span>
-                <img src="elixir-mockup.png" alt="The Elixir Principle Book & Audio Bundle">
-                <span class="work-title">The Elixir Principle</span>
-            </a>
-        </section>
-
         <div class="links-section">
             <a href="https://play.google.com/store/books/details?id=yImfEQAAQBAJ" class="link-row" target="_blank" rel="noopener">
                 <span class="link-num">01</span><span class="link-title">The Ebook</span>
-                <span class="link-meta"><span class="link-desc">Digital Wisdom — $37</span><span class="link-arrow">→</span></span>
+                <span class="link-meta"><span class="link-desc">The Elixir Principle — $37</span><span class="link-arrow">→</span></span>
             </a>
             <a href="https://play.google.com/store/audiobooks/details?id=AQAAAEDqT0MPuM" class="link-row" target="_blank" rel="noopener">
                 <span class="link-num">02</span><span class="link-title">The Audiobook</span>
@@ -81,7 +57,7 @@
             </a>
             <a href="mailto:contactsophiamedia@gmail.com" class="link-row">
                 <span class="link-num">04</span><span class="link-title">Contact</span>
-                <span class="link-meta"><span class="link-desc">Art Inquiries</span><span class="link-arrow">→</span></span>
+                <span class="link-meta"><span class="link-desc">Inquiries</span><span class="link-arrow">→</span></span>
             </a>
         </div>
 
