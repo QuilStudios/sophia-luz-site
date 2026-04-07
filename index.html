@@ -29,14 +29,10 @@
         .link-desc { font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); text-align: right; }
         .link-arrow { font-size: 14px; color: var(--grey); }
 
-        /* ── Physical Slow Mail Section ── */
+        /* ── Workbook Section ── */
         .sub-section { margin-top: 60px; padding: 56px 40px; background: var(--off); }
         .sub-eyebrow { font-size: 8px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--grey); margin-bottom: 18px; }
         .sub-text { font-size: 11px; letter-spacing: 0.05em; margin-bottom: 24px; line-height: 1.6; color: var(--black); max-width: 450px; }
-        .sub-form { display: flex; max-width: 360px; border: 1px solid var(--black); }
-        .sub-form input { flex: 1; padding: 13px 16px; background: transparent; border: none; outline: none; font-family: 'Tenor Sans', sans-serif; font-size: 10px; letter-spacing: 0.15em; color: var(--black); }
-        .sub-form button { padding: 13px 20px; background: var(--black); color: var(--white); border: none; font-family: 'Tenor Sans', sans-serif; font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; cursor: pointer; transition: opacity 0.3s ease; }
-        .sub-form button:hover { opacity: 0.8; }
 
         footer { margin-top: 80px; padding: 20px 0 60px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 8px; letter-spacing: 0.35em; color: var(--grey); }
         
@@ -72,14 +68,23 @@
         </div>
 
         <div class="sub-section">
-            <p class="sub-eyebrow">The Physical Correspondence</p>
+            <p class="sub-eyebrow">Claim Your Workbook</p>
             <p class="sub-text">
-                Moving my thoughts off the screen. Handwritten letters and postcards sent directly to you via post - away from the eyes of AI and censoring algorithms. Join the waitlist for physical "slow" mail.
+                Your life is a collection of individual days. If your average Tuesday feels like a prison, it's time to distill a new reality. Extract your gold with the 47-page "Your Path Made Clear" workbook [cite: 3-4].
             </p>
-            <form action="https://formspree.io/f/mgopzdky" method="POST" class="sub-form">
-                <input type="email" name="email" placeholder="Email address" required>
-                <button type="submit">Join Waitlist</button>
-            </form>
+            
+            <iframe data-tally-src="https://tally.so/embed/44vekb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                    loading="lazy" 
+                    width="100%" 
+                    height="364" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    title="Get the 'Your Path Made Clear' Workbook">
+            </iframe>
+            <script>
+                var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+            </script>
         </div>
 
         <footer><span>&copy; 2026 Sophia Luz</span><span style="font-family:'Cormorant'; font-size:24px; font-style:italic;">SL</span></footer>
